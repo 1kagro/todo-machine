@@ -1,4 +1,5 @@
 .CreateTodoButton {
+    position: fixed;
     background-color: #2471ff;
     border-radius: 12px;
     border: none;
@@ -10,4 +11,6 @@
     transition: background-color 0.2s ease-in-out;
     cursor: pointer;
     width: 100%;
+    left: 0;
+    bottom: 0;
 }

@@ -8,7 +8,7 @@ import { TodoItem } from "./TodoItem/TodoItem";
 import { CreateTodoButton } from "./CreateTodoButton/CreateTodoButton";
 
 const todos = [
-  { id: 1, text: "Learn React", completed: false },
+  { id: 1, text: "Learn React", completed: true },
   { id: 2, text: "Learn Python", completed: false },
   { id: 3, text: "Learn Aws", completed: false },
 ];

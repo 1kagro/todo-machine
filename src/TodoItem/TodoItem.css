@@ -1,8 +1,30 @@
 .TodoItem {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     background-color: white;
     margin-bottom: 10px;
     min-height: 50px;
     padding:5px 15px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.TodoItem-p--complete {
+    text-decoration: line-through;
+}
+
+.Icon {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin: auto 0;
+}
+.Icon-active {
+    background-image: url("../assets/img/correct.svg");
+}
+
+.Icon-inactive {
+    content: url("../assets/img/cancel.svg");
 }
