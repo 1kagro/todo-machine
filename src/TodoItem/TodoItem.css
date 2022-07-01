@@ -22,7 +22,7 @@
     margin: auto 0;
 }
 .Icon-active {
-    background-image: url("../assets/img/correct.svg");
+    content: url("../assets/img/correct.svg");
 }
 
 .Icon-inactive {
