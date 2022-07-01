@@ -1,11 +1,11 @@
-// import './App.css';b
+// import './App.css';
 
 import React from "react";
-import { TodoCounter } from "./TodoCounter/TodoCounter";
-import { TodoSearch } from "./TodoSearch/TodoSearch";
-import { TodoList } from "./TodoList/TodoList";
-import { TodoItem } from "./TodoItem/TodoItem";
-import { CreateTodoButton } from "./CreateTodoButton/CreateTodoButton";
+import { TodoCounter } from "../TodoCounter";
+import { TodoSearch } from "../TodoSearch";
+import { TodoList } from "../TodoList";
+import { TodoItem } from "../TodoItem";
+import { CreateTodoButton } from "../CreateTodoButton";
 
 const defaultTodos = [
   { id: 1, text: "Learn React", completed: true },
@@ -23,6 +23,21 @@ function App() {
   let filterTodos = todos.filter((todo) => (
     todo.text.toLowerCase().includes(searchValue.toLowerCase())
   ));
+  const findIndex = (text) => (todos.findIndex(todo => todo.text === text));
+
+  const toggleCompletedTodo = (text) => {
+    const todoIndex = findIndex(text);
+    const newTodos = [...todos];
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
+    setTodos(newTodos);
+  };
+
+  const deleteTodo = (text) => {
+    const todoIndex = findIndex(text);
+    const newTodos = [...todos];
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  }
 
   return (
     <React.Fragment>
@@ -39,7 +54,10 @@ function App() {
           <TodoItem
             key={todo.id}
             text={todo.text}
-            completed={todo.completed} />
+            completed={todo.completed}
+            onToggle={() => toggleCompletedTodo(todo.text)}
+            onDeleteTodo={() => deleteTodo(todo.text)}
+            />
         ))}
       </TodoList>
       <CreateTodoButton/>
