@@ -1,0 +1,28 @@
+.form {
+    display: grid;
+    width: 70%;
+    max-width: 300px;
+    background: #6f8eff;
+}
+.p {
+    margin: 20px 0;
+    text-align: center;
+}
+.label {
+    margin: 20px 0;
+    text-align: center;
+}
+.textarea {
+    display: flex;
+    width: 70%;
+    justify-self: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+.TodoForm-buttonContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}

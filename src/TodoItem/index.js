@@ -11,7 +11,7 @@ function TodoItem(props) {
 
     return (
         <li className='TodoItem' onDoubleClick={props.onDeleteTodo}>
-            <p className={`${props.completed && 'TodoItem-p--complete'}`}>{props.text}</p>
+            <p className={`item ${props.completed && 'TodoItem-p--complete'}`}>{props.text}</p>
             <img
                 className={`Icon ${props.completed ? 'Icon-inactive' : 'Icon-active'}`}
                 src={icon_correct}

@@ -5,6 +5,7 @@ import { TodoCounter } from "../TodoCounter";
 import { TodoSearch } from "../TodoSearch";
 import { TodoList } from "../TodoList";
 import { TodoItem } from "../TodoItem";
+import { TodoForm } from "../TodoForm";
 import { CreateTodoButton } from "../CreateTodoButton";
 import { Modal } from "../Modal";
 
@@ -15,6 +16,8 @@ function AppUI() {
         filterTodos,
         toggleCompletedTodo,
         deleteTodo,
+        openModal,
+        setOpenModal
     } = React.useContext(TodoContext);
     return (
         <React.Fragment>
@@ -35,10 +38,15 @@ function AppUI() {
                 ))}
             </TodoList>
 
-            <Modal>
-                <p>Teletransportación</p>
-            </Modal>
-            <CreateTodoButton />
+            {openModal && (
+                <Modal>
+                    <TodoForm />
+                </Modal>
+            )}
+
+            <CreateTodoButton
+                setOpenModal={setOpenModal}
+            />
         </React.Fragment>
     );
 }

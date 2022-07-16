@@ -11,6 +11,10 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+.item {
+    overflow-x: hidden;
+}
+
 .TodoItem-p--complete {
     text-decoration: line-through;
 }
